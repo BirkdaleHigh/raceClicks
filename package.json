@@ -1,0 +1,15 @@
+{
+  "name": "hardware-panel-example",
+  "version": "1.0.0",
+  "description": "Interface to represent physical input/output",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mr J Bennett",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5"
+  }
+}
