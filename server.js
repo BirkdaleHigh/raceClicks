@@ -24,6 +24,6 @@ io.on('disconnect', function(socket){
 
 
 
-http.listen(3000, function(){
-  console.log(`listening on port: 3000`)
+http.listen(3000, '0.0.0.0',function(){
+  console.log(`listening on ${http.address().address} at: ${http.address().port}`)
 })
