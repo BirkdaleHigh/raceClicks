@@ -10,19 +10,27 @@
       height: 200px;
       border-radius: 100px;
       border:none;
+      outline: none;
       background:#999;
     }
-    button:active{ background: #45b10d;}
+    button:active{background: #45b10d;}
     .red{ background: rgb(226, 22, 22) }
+      progress.red::-webkit-progress-value{background: rgb(226, 22, 22)}
     .blue{ background: rgb(15, 93, 219) }
-
+      progress.blue::-webkit-progress-value{background: rgb(15, 93, 219)}
+    .racer{display:flex; align-items: center}
+    progress{flex:1;}
   </style>
 </head>
 <body>
   <h1>Controls</h1>
   
-  <button id="red"  class="red"/>
-  <button id="blue" class="blue"/>
+  <div class="racer">
+    <button id="red"  class="red"></button><progress max=10 class=red></progress>
+  </div>
+  <div class="racer">
+    <button id="blue"  class="blue"></button><progress max=10 class=blue></progress>
+  </div>
 
   <script src="/client.js"></script>
 </body>
