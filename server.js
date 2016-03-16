@@ -14,6 +14,7 @@ io.on('connection', function(socket){
   
   socket.on('button pressed', function(evt){
     console.log(evt)
+    io.emit("button pressed", evt)
   })
 })
 io.on('disconnect', function(socket){

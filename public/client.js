@@ -7,7 +7,7 @@ var Button = function(id){
   self.count = 0
   self.el = document.getElementById(id)
   self.el.onclick = function(){ self.press() }
-  self.progress = document.querySelector("progress." + this.id)
+  self.progress = document.querySelector("progress." + self.id)
 }
 Button.prototype = {
   press: function(){
@@ -16,15 +16,30 @@ Button.prototype = {
     if(this.progress.value >= this.progress.max){
       this.reset()
     }
-    this.progress.value = this.count
-
     socket.emit("button pressed", {"button": this.id, "count": this.count})
+    this.update()
   },
   reset: function(){
     this.count = 0
     this.progress.value = 0
+  },
+  update: function(){
+    this.progress.value = this.count
   }
 }
+
+socket.on("button pressed", function(evt){
+  switch(evt.button){
+    case 'red':
+      red.count = evt.count
+      red.update()
+    break
+    case 'blue':
+      blue.count = evt.count
+      blue.update()
+    break;
+  }
+})
 
 var red = new Button("red")
 var blue = new Button("blue")
