@@ -5,17 +5,25 @@
   <title>Panel Controls</title>
   <script src="/socket.io/socket.io.js"></script>
   <style>
-    button{ width: 200px; height: 200px; border-radius: 100px; border:none;}
-    .on {background:#2de272;}
-    .off{background:#ce2f1a;}
+    button{
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      border:none;
+      background:#999;
+    }
+    button:active{ background: #45b10d;}
+    .red{ background: rgb(226, 22, 22) }
+    .blue{ background: rgb(15, 93, 219) }
+
   </style>
 </head>
 <body>
   <h1>Controls</h1>
   
-  <button id="red" class=off />
-  <button id="blue" class=off />
-  
+  <button id="red"  class="red"/>
+  <button id="blue" class="blue"/>
+
   <script src="/client.js"></script>
 </body>
 </html>
