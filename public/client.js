@@ -1,19 +1,16 @@
 var socket = io()
 
 var Button = function(id){
-  this.id = id || 1
-  this.count = 0
+  var self = this
+
+  self.id = id || 1
+  self.count = 0
+  document.getElementById(id).onclick = function(){ self.press() }
 }
 Button.prototype.press = function(){
   this.count += 1
-  socket.emit("button pressed", {"button": this.id})
+  socket.emit("button pressed", {"button": this.id, "count": this.count})
 }
 
 var red = new Button("red")
-
-document.querySelector('#red').addEventListener('click', function(){
-  console.log('Red Button')
-  red.press()
-
-  return false
-})
+var blue = new Button("blue")
