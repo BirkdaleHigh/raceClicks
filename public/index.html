@@ -5,25 +5,30 @@
   <title>Panel Controls</title>
   <script src="/socket.io/socket.io.js"></script>
   <style>
+    /*colour list: 1f77b4, ff7f0e, #2ca02c, #d62728*/
+    body{background: #efefef; color: #06092c;}
+    h1{font-style: italic} h1,h2{text-align: center;}
     button{
       width: 200px;
       height: 200px;
+      margin-right:-1px;
       border-radius: 100px;
       border:none;
       outline: none;
       background:#999;
     }
-    button:active{background: #45b10d;}
-    .red{ background: rgb(226, 22, 22) }
-      progress.red::-webkit-progress-value{background: rgb(226, 22, 22)}
-    .blue{ background: rgb(15, 93, 219) }
-      progress.blue::-webkit-progress-value{background: rgb(15, 93, 219)}
+    button:active{opacity: .8;}
+    .red{ background: #1f77b4 }
+      progress.red::-webkit-progress-value{background: #1f77b4}
+    .blue{ background: #ff7f0e }
+      progress.blue::-webkit-progress-value{background: #ff7f0e}
     .racer{display:flex; align-items: center}
     progress{flex:1;}
   </style>
 </head>
 <body>
-  <h1>Controls</h1>
+  <h1>RaceClicks</h1>
+  <h2><small>Click your favorite colour to win</small></h2>
   
   <div class="racer">
     <button id="red"  class="red"></button><progress max=10 class=red></progress>
