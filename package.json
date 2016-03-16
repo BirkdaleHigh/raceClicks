@@ -1,7 +1,7 @@
 {
-  "name": "hardware-panel-example",
+  "name": "click-race",
   "version": "1.0.0",
-  "description": "Interface to represent physical input/output",
+  "description": "Multiplayer click race",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
