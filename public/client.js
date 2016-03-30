@@ -41,5 +41,13 @@ socket.on("button pressed", function(evt){
   }
 })
 
+var form = document.getElementById('newuser')
+
+form.addEventListener("click", function(e){
+  e.preventDefault()
+  var user = form.querySelector('#username').value
+  console.log(user)
+})
+
 var red = new Button("red")
 var blue = new Button("blue")

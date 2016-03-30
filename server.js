@@ -16,12 +16,15 @@ io.on('connection', function(socket){
     console.log(evt)
     io.emit("button pressed", evt)
   })
+
+  socket.on('new user', function(evt){
+    console.log('make a new user')
+    io.emit('new user', evt)
+  })
 })
 io.on('disconnect', function(socket){
   console.log('User Disconnected')
 })
-
-
 
 
 
