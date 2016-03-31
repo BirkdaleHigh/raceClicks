@@ -62,6 +62,12 @@ socket.on("reset", function(evt){
     var item=document.createElement("li")
     item.innerText=evt.winner
     score.appendChild(item)
+    sir.reset()
+    Luis.reset()
+    Nathan.reset()
+    Juanos.reset()
+    Thomas.reset()
+    Elliot.reset()
 })
 
 var sir = new Button("Sir")
