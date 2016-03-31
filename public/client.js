@@ -30,16 +30,36 @@ Button.prototype = {
 
 socket.on("button pressed", function(evt){
   switch(evt.button){
-    case 'red':
-      red.count = evt.count
-      red.update()
-    break
-    case 'blue':
-      blue.count = evt.count
-      blue.update()
+    case 'Sir':
+      sir.count = evt.count
+      sir.update()
+    break;
+    case 'Luis':
+      Luis.count = evt.count
+      Luis.update()
+    break;
+    case 'Nathan':
+      Nathan.count = evt.count
+      Nathan.update()
+    break;
+    case 'Juanos':
+      Juanos.count = evt.count
+      Juanos.update()
+    break;
+    case 'Thomas':
+      Thomas.count = evt.count
+      Thomas.update()
+    break;
+    case 'Elliot':
+      Elliot.count = evt.count
+      Elliot.update()
     break;
   }
 })
 
-var red = new Button("red")
-var blue = new Button("blue")
+var sir = new Button("Sir")
+var Luis = new Button("Luis")
+var Nathan = new Button("Nathan")
+var Juanos = new Button("Juanos")
+var Thomas = new Button("Thomas")
+var Elliot = new Button("Elliot")
