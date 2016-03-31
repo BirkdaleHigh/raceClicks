@@ -47,6 +47,7 @@ form.addEventListener("click", function(e){
   e.preventDefault()
   var user = form.querySelector('#username').value
   console.log(user)
+  socket.emit("new user", {user: user})
 })
 
 var red = new Button("red")

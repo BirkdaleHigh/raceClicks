@@ -18,7 +18,7 @@ io.on('connection', function(socket){
   })
 
   socket.on('new user', function(evt){
-    console.log('make a new user')
+    console.log('make a new user:' + evt.user)
     io.emit('new user', evt)
   })
 })
