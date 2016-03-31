@@ -18,20 +18,15 @@
       background:#999;
     }
     button:active{opacity: .8;}
-    .Sir{ background: #ff00b1 }
-      progress.Sir::-webkit-progress-value{background: #ff00b1}
-    .Luis{ background: #1dff00 }
-      progress.Luis::-webkit-progress-value{background: #1dff00}
-    .Nathan{ background: #a32e2e }
-      progress.Nathan::-webkit-progress-value{background: #a32e2e}
-    .Juanos{ background: #ff6200 }
-      progress.Juanos::-webkit-progress-value{background: #ff6200}
-    .Thomas{ background: #2700ff }
-      progress.Thomas::-webkit-progress-value{background: #2700ff}
-    .Elliot{ background: #ff0000 }
-      progress.Elliot::-webkit-progress-value{background: #ff0000}
-    .racer{display:flex; align-items: center}
-    progress{flex:1;}
+    .racers div{display:flex; align-items: center}
+    progress{flex:1; background: #e8e8e8;}
+    progress::-webkit-progress-bar{background: inherit;}
+    #Sir    button, #Sir     progress::-webkit-progress-value{ background: #ff00b1; }
+    #Luis   button, #Luis    progress::-webkit-progress-value{ background: #1dff00; }
+    #Nathan button, #Nathan  progress::-webkit-progress-value{ background: #a32e2e; }
+    #Juanos button, #Juanos  progress::-webkit-progress-value{ background: #ff6200; }
+    #Thomas button, #Thomas  progress::-webkit-progress-value{ background: #2700ff; }
+    #Elliot button, #Elliot  progress::-webkit-progress-value{ background: #ff0000; }
   </style>
 </head>
 <body>
@@ -39,25 +34,26 @@
   <h2><small>Click your favorite colour to win</small></h2>
   <ul id=score></ul>
   
-  <div class="racer">
-    <button id="Sir"  class="Sir">Sir</button><progress max=50 class=Sir></progress>
-  </div>
-  <div class="racer">
-    <button id="Luis"  class="Luis">Luis</button><progress max=50 class=Luis></progress>
-  </div>
- <div class="racer">
-    <button id="Nathan"  class="Nathan">Nathan</button><progress max=50 class=Nathan></progress>
-  </div>
- <div class="racer">
-    <button id="Juanos"  class="Juanos">Juanos</button><progress max=50 class=Juanos></progress>
-  </div>
-<div class="racer">
-    <button id="Thomas"  class="Thomas">Thomas</button><progress max=50 class=Thomas></progress>
-  </div>
-  <div class="racer">
-    <button id="Elliot"  class="Elliot">Elliot</button><progress max=50 class=Elliot></progress>
-  </div>
-
+  <section class="racers">
+    <div id="Sir">
+      <button>Sir</button><progress max=50></progress>
+    </div>
+    <div id="Luis">
+      <button>Luis</button><progress max=50></progress>
+    </div>
+    <div id="Nathan">
+      <button>Nathan</button><progress max=50></progress>
+    </div>
+    <div id="Juanos">
+      <button>Juanos</button><progress max=50></progress>
+    </div>
+    <div id="Thomas">
+      <button>Thomas</button><progress max=50></progress>
+    </div>
+    <div id="Elliot">
+      <button>Elliot</button><progress max=50></progress>
+    </div>
+  </section>
   <script src="/client.js"></script>
 </body>
 </html>

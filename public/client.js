@@ -5,9 +5,9 @@ var Button = function(id){
 
   self.id = id || 1
   self.count = 0
-  self.el = document.getElementById(id)
+  self.el = document.querySelector('#' + id + ' button')
   self.el.onclick = function(){ self.press() }
-  self.progress = document.querySelector("progress." + self.id)
+  self.progress = document.querySelector('#' + id + ' progress')
 }
 Button.prototype = {
   press: function(){
