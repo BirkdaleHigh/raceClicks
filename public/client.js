@@ -56,6 +56,13 @@ socket.on("button pressed", function(evt){
     break;
   }
 })
+socket.on("reset", function(evt){
+  console.log(evt.winner + " you win!")
+  var score=document.getElementById("score")
+    var item=document.createElement("li")
+    item.innerText=evt.winner
+    score.appendChild(item)
+})
 
 var sir = new Button("Sir")
 var Luis = new Button("Luis")
