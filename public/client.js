@@ -50,5 +50,19 @@ form.addEventListener("click", function(e){
   socket.emit("new user", {user: user})
 })
 
-var red = new Button("red")
-var blue = new Button("blue")
+
+function newPlayer(name){
+  var racers = document.querySelector(".racers")
+  var container = document.createElement("div")
+  var button = document.createElement("button")
+  container.id = name
+  button.innerText = name
+  score.appendChild(item)
+}
+
+var sir = new Button("Sir")
+var Luis = new Button("Luis")
+var Nathan = new Button("Nathan")
+var Juanos = new Button("Juanos")
+var Thomas = new Button("Thomas")
+var Elliot = new Button("Elliot")
