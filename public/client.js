@@ -89,15 +89,19 @@ form.addEventListener("click", function(e){
 
 function newPlayer(name){
   var racers = document.querySelector(".racers")
+
+  // In memory, lets build up the parts of the document for the new player to interact with
   var container = document.createElement("div")
   var button = document.createElement("button")
   var progress = document.createElement("progress")
   progress.max = 50
   container.id = name
   button.innerText = name
+  // Put the elements together in their tree
   container.appendChild(button)
   container.appendChild(progress)
   
+  // Stick the new player into the page
   racers.appendChild(container)
 }
 
