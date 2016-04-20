@@ -28,12 +28,12 @@ Button.prototype = {
   }
 }
 
-socket.on("button pressed", function(evt){
+socket.on("new user", function(evt){
   newPlayer(evt.user)
   console.log('new user')
 })
 
-socket.on("new user", function(evt){
+socket.on("button pressed", function(evt){
   switch(evt.button){
     case 'Sir':
       sir.count = evt.count
