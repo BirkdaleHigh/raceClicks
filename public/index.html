@@ -7,10 +7,27 @@
   <style>
     /*colour list: 1f77b4, ff7f0e, #2ca02c, #d62728*/
     body{background: #efefef; color: #06092c;}
-    h1{font-style: italic} h1,h2{text-align: center;}
+    h1{font-style: italic}
+    header{
+      display:flex;
+      text-align: center;
+    }
+    #score{
+      min-width: 100px;
+      height: 120px;
+      flex:3;
+      margin: 0;
+      overflow-y: scroll;
+      list-style: none;
+      text-align: justify;
+    }
+    #score li{
+      display: inline-block;
+      margin: 5px;
+    }
     button{
       width: 200px;
-      height: 200px;
+      height: 100px;
       margin-right:-1px;
       border-radius: 100px;
       border:none;
@@ -18,12 +35,6 @@
       background:#999;
     }
     button:active{opacity: .8;}
-    .red{ background: #1f77b4 }
-      progress.red::-webkit-progress-value{background: #1f77b4}
-    .blue{ background: #ff7f0e }
-      progress.blue::-webkit-progress-value{background: #ff7f0e}
-    .racer{display:flex; align-items: center}
-    progress{flex:1;}
     .popover{
       position: absolute;
         top: 0;
@@ -35,11 +46,25 @@
       justify-content: center;
       align-items: center;
     }
+    .racers div{display:flex; align-items: center}
+    progress{flex:1; background: #e8e8e8;}
+    progress::-webkit-progress-bar{background: inherit;}
+    #Sir    button, #Sir     progress::-webkit-progress-value{ background: #ff00b1; }
+    #Luis   button, #Luis    progress::-webkit-progress-value{ background: #1dff00; }
+    #Nathan button, #Nathan  progress::-webkit-progress-value{ background: #a32e2e; }
+    #Juanos button, #Juanos  progress::-webkit-progress-value{ background: #ff6200; }
+    #Thomas button, #Thomas  progress::-webkit-progress-value{ background: #2700ff; }
+    #Elliot button, #Elliot  progress::-webkit-progress-value{ background: #ff0000; }
   </style>
 </head>
 <body>
-  <h1>RaceClicks</h1>
-  <h2><small>Click your favorite colour to win</small></h2>
+  <header>
+    <div>
+      <h1>RaceClicks</h1>
+      <h3>Click your favorite colour to win</h3>
+    </div>
+    <ul id=score></ul>
+  </header>
   
   <div class="popover">
     <div id="newuser">
@@ -49,13 +74,26 @@
     </div>
   </div>
   
-  <div class="racer">
-    <button id="red"  class="red"></button><progress max=10 class=red></progress>
-  </div>
-  <div class="racer">
-    <button id="blue"  class="blue"></button><progress max=10 class=blue></progress>
-  </div>
-
+  <section class="racers">
+    <div id="Sir">
+      <button>Sir</button><progress max=50></progress>
+    </div>
+    <div id="Luis">
+      <button>Luis</button><progress max=50></progress>
+    </div>
+    <div id="Nathan">
+      <button>Nathan</button><progress max=50></progress>
+    </div>
+    <div id="Juanos">
+      <button>Juanos</button><progress max=50></progress>
+    </div>
+    <div id="Thomas">
+      <button>Thomas</button><progress max=50></progress>
+    </div>
+    <div id="Elliot">
+      <button>Elliot</button><progress max=50></progress>
+    </div>
+  </section>
   <script src="/client.js"></script>
 </body>
 </html>

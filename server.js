@@ -14,6 +14,10 @@ io.on('connection', function(socket){
   
   socket.on('button pressed', function(evt){
     console.log(evt)
+    if(evt.count === 50){
+      io.emit("reset", {"winner": evt.button})
+      return
+    }
     io.emit("button pressed", evt)
   })
 

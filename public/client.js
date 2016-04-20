@@ -5,9 +5,9 @@ var Button = function(id){
 
   self.id = id || 1
   self.count = 0
-  self.el = document.getElementById(id)
+  self.el = document.querySelector('#' + id + ' button')
   self.el.onclick = function(){ self.press() }
-  self.progress = document.querySelector("progress." + self.id)
+  self.progress = document.querySelector('#' + id + ' progress')
 }
 Button.prototype = {
   press: function(){
@@ -35,15 +35,44 @@ socket.on("button pressed", function(evt){
 
 socket.on("new user", function(evt){
   switch(evt.button){
-    case 'red':
-      red.count = evt.count
-      red.update()
-    break
-    case 'blue':
-      blue.count = evt.count
-      blue.update()
+    case 'Sir':
+      sir.count = evt.count
+      sir.update()
+    break;
+    case 'Luis':
+      Luis.count = evt.count
+      Luis.update()
+    break;
+    case 'Nathan':
+      Nathan.count = evt.count
+      Nathan.update()
+    break;
+    case 'Juanos':
+      Juanos.count = evt.count
+      Juanos.update()
+    break;
+    case 'Thomas':
+      Thomas.count = evt.count
+      Thomas.update()
+    break;
+    case 'Elliot':
+      Elliot.count = evt.count
+      Elliot.update()
     break;
   }
+})
+socket.on("reset", function(evt){
+  console.log(evt.winner + " you win!")
+  var score=document.getElementById("score")
+    var item=document.createElement("li")
+    item.innerText=evt.winner
+    score.appendChild(item)
+    sir.reset()
+    Luis.reset()
+    Nathan.reset()
+    Juanos.reset()
+    Thomas.reset()
+    Elliot.reset()
 })
 
 var form = document.getElementById('newuser')
