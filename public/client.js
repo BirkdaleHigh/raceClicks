@@ -79,9 +79,11 @@ var form = document.getElementById('newuser')
 
 form.addEventListener("click", function(e){
   e.preventDefault()
-  var user = form.querySelector('#username').value
-  console.log(user)
-  socket.emit("new user", {user: user})
+  if(e.srcElement.type == "submit"){
+    var user = form.querySelector('#username').value
+    console.log(user)
+    socket.emit("new user", {user: user})
+  }
 })
 
 
