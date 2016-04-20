@@ -29,6 +29,11 @@ Button.prototype = {
 }
 
 socket.on("button pressed", function(evt){
+  newPlayer(evt.user)
+  console.log('new user')
+})
+
+socket.on("new user", function(evt){
   switch(evt.button){
     case 'red':
       red.count = evt.count
@@ -55,9 +60,14 @@ function newPlayer(name){
   var racers = document.querySelector(".racers")
   var container = document.createElement("div")
   var button = document.createElement("button")
+  var progress = document.createElement("progress")
+  progress.max = 50
   container.id = name
   button.innerText = name
-  score.appendChild(item)
+  container.appendChild(button)
+  container.appendChild(progress)
+  
+  racers.appendChild(container)
 }
 
 var sir = new Button("Sir")
