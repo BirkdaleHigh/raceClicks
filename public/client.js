@@ -82,6 +82,8 @@ form.addEventListener("click", function(e){
   if(e.srcElement.type == "submit"){
     var user = form.querySelector('#username').value
     console.log(user)
+    var popover=document.querySelector(".popover")
+    popover.style.display="none"
     socket.emit("new user", {user: user})
   }
 })
