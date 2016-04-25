@@ -105,10 +105,15 @@ function newPlayer(name){
   
   // Stick the new player into the page
   racers.appendChild(container)
+
+  players.push( new Button(name) )
 }
 
-var sir = new Button("Sir")
-var Luis = new Button("Luis")
+var players = [
+  new Button("Sir"),
+  new Button("Luis")
+]
+
 var Nathan = new Button("Nathan")
 var Juanos = new Button("Juanos")
 var Thomas = new Button("Thomas")
