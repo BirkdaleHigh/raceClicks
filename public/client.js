@@ -1,4 +1,12 @@
+"use strict"
 var socket = io()
+var buttons = []
+
+// Default Players
+var players = [
+  "Sir",
+  "Luis"
+]
 
 var Button = function(id){
   var self = this
@@ -105,7 +113,7 @@ function newPlayer(name){
   var button = document.createElement("button")
   var progress = document.createElement("progress")
   progress.max = 50
-  container.id = name
+  container.id     = name
   button.innerText = name
   // Put the elements together in their tree
   container.appendChild(button)
@@ -114,15 +122,6 @@ function newPlayer(name){
   // Stick the new player into the page
   racers.appendChild(container)
 
-  players.push( new Button(name) )
+  buttons.push( new Button(name) )
 }
 
-var players = [
-  new Button("Sir"),
-  new Button("Luis")
-]
-
-var Nathan = new Button("Nathan")
-var Juanos = new Button("Juanos")
-var Thomas = new Button("Thomas")
-var Elliot = new Button("Elliot")
