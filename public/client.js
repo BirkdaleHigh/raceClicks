@@ -14,7 +14,7 @@ var Button = function(id){
   self.id = id || 1
   self.count = 0
   self.el = document.querySelector('#' + id + ' button')
-  self.el.onclick = self.press
+  self.el.onclick = self.press.bind(self)
   self.progress = document.querySelector('#' + id + ' progress')
 }
 Button.prototype = {
@@ -25,7 +25,6 @@ Button.prototype = {
       this.reset()
     }
     socket.emit("button pressed", {"button": this.id, "count": this.count})
-    this.update()
   },
   reset: function(){
     this.count = 0
@@ -36,10 +35,11 @@ Button.prototype = {
   }
 }
 
-socket.on("connection", function(){
+socket.on("connect", function(){
+  console.log('Start Connection')
   // List of players
   players.forEach(function(player){
-    newPlayer(player.id)
+    newPlayer(player)
   })
   // Run newPlayer for each name in the list
 })
