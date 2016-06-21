@@ -50,32 +50,15 @@ socket.on("new user", function(evt){
 })
 
 socket.on("button pressed", function(evt){
-  switch(evt.button){
-    case 'Sir':
-      sir.count = evt.count
-      sir.update()
-    break;
-    case 'Luis':
-      Luis.count = evt.count
-      Luis.update()
-    break;
-    case 'Nathan':
-      Nathan.count = evt.count
-      Nathan.update()
-    break;
-    case 'Juanos':
-      Juanos.count = evt.count
-      Juanos.update()
-    break;
-    case 'Thomas':
-      Thomas.count = evt.count
-      Thomas.update()
-    break;
-    case 'Elliot':
-      Elliot.count = evt.count
-      Elliot.update()
-    break;
-  }
+  buttons.filter(function(btn){
+    // Normalize human input when comparing strings.
+    if(evt.button.toLowerCase() === btn.id.toLowerCase()){
+      return true
+    }
+  }).forEach(function(btn){
+    btn.count = evt.count
+    btn.update()
+  })
 })
 socket.on("reset", function(evt){
   console.log(evt.winner + " you win!")
